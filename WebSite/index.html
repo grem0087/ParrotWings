@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ParrotWings</title>
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/site.css" />
+    <link rel="stylesheet" href="./lib/sweetalert/sweet-alert.css" />
+    <script src="./lib/jquery/dist/jquery.js"></script>
+    <script src="./lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/sweetalert/SweetAlert.js"></script>
+    <script src="./lib/sweetalert/sweetalert2.js"></script>
+    <script src="./lib/angular/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="./lib/angular/angular-route.js"></script>
+    <script src="./lib/angular/ng-storage.js"></script>
+    <script src="./lib/angular/local-storage-provider.js"></script>    
+    <script src="./js/site.js"></script>
+    <script src="./js/modules/bundles/components-bundle.js"></script>
+    <script src="./js/modules/bundles/transactions-bundle.js"></script>
+    <script src="./js/modules/bundles/user-bundle.js"></script>
+
+    <base href="/">
+</head>
+<body ng-app="ParrotWings">
+    <div ng-controller="HomeCtrl">
+        
+        <div ng-show="Loader.isLoading" >
+            <div class="loader progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="1" ></div>
+        </div>
+        <div class="jumbotron">
+            <div class="container body-content">
+                <a href="/"><h1>Parrot wings</h1></a>
+            </div>
+            <nav class="navbar navbar-inverse">
+                <div class="container body-content">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-if="!authentication.isAuth"><a href="/register">Register</a></li>
+                        <li ng-if="!authentication.isAuth"><a href="/signin">SignIn</a></li>
+                        <li ng-if="authentication.isAuth"><a href="javascript:" ng-click="logOut()">SignOut</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container body-content">
+
+            <div ng-view></div>
+            <hr />
+            <footer>
+                <p>&copy; 2017 - ParrotWings</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

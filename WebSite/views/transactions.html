@@ -1,0 +1,24 @@
+﻿<button ng-click="openTransactionPage()" class="btn btn-primary" >Make money transfer</button>
+<h2>Last transactions</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Recipient</th>
+            <th>Amount</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in Items">
+            <td>{{item.id}}</td>
+            <td>{{item.dateTime }}</td>
+            <td>{{item.recipient.name}}</td>
+            <td>{{item.amount}}</td>
+            <td>
+                <button class="btn btn-default" ng-click="repeatTransaction(item.recipient, item.amount)">Repeat</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+﻿// Configure bundling and minification for the project.
+// More info at https://go.microsoft.com/fwlink/?LinkId=808241
+[
+  {
+    "outputFileName": "js/modules/bundles/user-bundle.js",
+    "inputFiles": [
+      "js/modules/user/**/*.js"
+    ]
+  }, 
+  {
+    "outputFileName": "js/modules/bundles/transactions-bundle.js",
+    "inputFiles": [
+      "js/modules/transactions/**/*.js"
+    ]
+  },
+  {
+    "outputFileName": "js/modules/bundles/components-bundle.js",
+    "inputFiles": [
+      "js/modules/components/_init.js",
+      "js/modules/components/**/*.js"
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+﻿<div class="autocomplete">
+    <input class="form-control"
+           placeholder="{{placeholder}}"
+           ng-model="inputString"
+           ng-disabled="disabled" />
+    <span ng-if="showLoader">...</span>
+    <span class="m-l-xs" ng-if="Items.length == 0">User name not found</span>
+    <div class="dropdown">
+            <ul class="dropdown-menu" ng-class="{'show-anyway' : Items.length > 0 && showItems}" >
+                <li ng-repeat="item in Items track by $index">
+                    <a href="javascript:" ng-click="selectItem(item)">{{item.name}}</a>
+                </li>
+            </ul>
+    </div>
+</div>

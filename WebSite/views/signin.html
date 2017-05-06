@@ -1,0 +1,27 @@
+﻿<div ng-controller="SignInCtrl">
+    <div class="jumbotron">
+        <div class="pw-login-form">
+            <form name="registerForm">
+                <h1>SignIn</h1>
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="control-label required">Email</label>
+                    <div class="form-controls">
+                        <input type="email" ng-model="form.Email" class="form-control" name="Email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label required">Password</label>
+                    <div class="form-controls">
+                        <input type="password" ng-model="form.Password" class="form-control" name="Login" />
+                    </div>
+                </div>
+                <div class="alert alert-danger" ng-if="validate.errorMessage">
+                    {{validate.errorMessage}}
+                </div>
+            </form>
+            <button ng-click="save()" class="btn btn-primary">SighIn</button>
+        </div>
+    </div>
+</div>

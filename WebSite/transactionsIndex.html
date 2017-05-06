@@ -1,0 +1,16 @@
+﻿<div ng-controller="TransactionsCtrl">
+    <!-- todo: make directive?-->
+    <div class="bs-callout bs-callout-default col-xs-2 statusbar">
+            <div>User: {{user.Name}}</div>
+            <div>Balance: {{user.balance}}</div>
+    </div>
+        <div ng-switch="transactionsPage.page">
+            <div ng-switch-when="makeTransaction">
+                <div ng-include="'./views/makeTransaction.html'"></div>
+            </div>
+            <div ng-switch-default>
+                <div ng-include="'./views/transactions.html'"></div>
+            </div>
+        </div>
+    </div>
+
